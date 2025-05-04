@@ -1,0 +1,305 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-300\% {
+  background-size: 300% 100%;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 262.1 83.3% 57.8%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 262.1 83.3% 57.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Consistent card heights */
+.equal-height {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.equal-height > * {
+  flex-grow: 1;
+}
+
+/* Improved accessibility for focus states */
+:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* Animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Improved spacing for card content */
+.card-content {
+  @apply p-6 flex flex-col h-full;
+}
+
+.card-content > * + * {
+  @apply mt-4;
+}
+
+/* Animated background for hero sections */
+.animated-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.animated-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.08) 0%, transparent 50%);
+  opacity: 0.7;
+  z-index: 0;
+  animation: pulse 8s ease-in-out infinite alternate;
+}
+
+.animated-bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.08) 0%, transparent 50%);
+  opacity: 0.7;
+  z-index: 0;
+  animation: pulse 12s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0.8;
+  }
+}
+
+/* Improved spacing for mobile */
+@media (max-width: 640px) {
+  .container {
+    @apply px-4;
+  }
+
+  h1 {
+    @apply text-3xl;
+  }
+
+  h2 {
+    @apply text-2xl;
+  }
+
+  .py-20 {
+    @apply py-12;
+  }
+
+  .card-content {
+    @apply p-4;
+  }
+}
+
+/* Improved focus states for accessibility */
+:focus-visible {
+  @apply outline-2 outline-offset-2 outline-purple-500;
+}
+
+/* Custom gradient text */
+.custom-gradient-text {
+  background-image: linear-gradient(to right, #7c3aed, #06b6d4);
+  background-clip: text;
+  color: transparent;
+}
+
+/* CardGrid styling */
+.card-grid {
+  display: grid;
+  gap: var(--grid-gap, 1.5rem);
+}
+
+@media (max-width: 1023px) {
+  .card-grid-scrollable {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-bottom: 1rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .card-grid-scrollable::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card-grid-item {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+  }
+}
+
+/* Card styling improvements */
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure all card content is visible */
+.card-content {
+  overflow-y: auto;
+  max-height: 100%;
+}
+
+/* Improved card hover effects */
+.card-hover-effect {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover-effect:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Improved button styles */
+.btn-gradient {
+  @apply bg-gradient-to-r from-purple-600 to-cyan-500 text-white hover:opacity-90 transition-opacity;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.btn-gradient::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.7s;
+  z-index: -1;
+}
+
+.btn-gradient:hover::before {
+  left: 100%;
+}
+
+/* Improved scrollbar for desktop */
+@media (min-width: 1440px) {
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* Improved scrolling for mobile */
+@media (max-width: 1439px) {
+  .scrollable-cards-wrapper {
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .scrollable-cards-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollable-card-item {
+    scroll-snap-align: start;
+  }
+}
+
+/* Scroll indicator animation */
+@keyframes scrollIndicator {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+}
+
+.scroll-indicator-animation {
+  animation: scrollIndicator 1.5s ease-in-out infinite;
+}
