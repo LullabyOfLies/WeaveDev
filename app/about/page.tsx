@@ -54,24 +54,14 @@ export default function AboutPage() {
   // Team members data
   const teamMembers = [
     {
-      name: "Alex Morgan",
-      role: "Founder & CEO",
-      image: "/placeholder.svg?height=400&width=400",
+      name: "Omar A. Gerardo",
+      role: "Co-founder",
+      image: "/projects/Omar-G.jpg",
     },
     {
-      name: "Samantha Chen",
-      role: "CTO",
-      image: "/placeholder.svg?height=400&width=400",
-    },
-    {
-      name: "David Rodriguez",
-      role: "Lead Developer",
-      image: "/placeholder.svg?height=400&width=400",
-    },
-    {
-      name: "Priya Patel",
-      role: "UX/UI Director",
-      image: "/placeholder.svg?height=400&width=400",
+      name: "Jean Lorenz R. Recato",
+      role: "Co-founder",
+      image: "/projects/Jean-R.JPG",
     },
   ]
 
@@ -116,16 +106,16 @@ export default function AboutPage() {
               <div className="relative">
                 <div className="aspect-[4/3] rounded-xl overflow-hidden border border-gray-800">
                   <Image
-                    src="/placeholder.svg?height=600&width=800"
-                    alt="WeaveDev Co. Team"
+                    src="/projects/about-img.jpg"
+                    alt="WeaveDev Co. team collaborating in the office"
                     width={800}
                     height={600}
-                    className="object-cover"
+                    className="w-full h-full object-cover"
                     loading="lazy"
                   />
                 </div>
                 <div className="absolute -bottom-6 -right-6 bg-gradient-to-r from-purple-600 to-cyan-500 p-4 rounded-lg shadow-xl">
-                  <div className="text-3xl font-bold">10+</div>
+                  <div className="text-3xl font-bold">2+</div>
                   <div className="text-sm">Years of Excellence</div>
                 </div>
               </div>
@@ -154,15 +144,15 @@ export default function AboutPage() {
               <div className="flex flex-wrap gap-4">
                 <div className="flex items-center">
                   <CheckCircle className="h-5 w-5 text-purple-500 mr-2" aria-hidden="true" />
-                  <span>100+ Successful Projects</span>
+                  <span>3+ Successful Projects</span>
                 </div>
                 <div className="flex items-center">
                   <CheckCircle className="h-5 w-5 text-cyan-500 mr-2" aria-hidden="true" />
-                  <span>50+ Enterprise Clients</span>
+                  <span>3+ Enterprise Clients</span>
                 </div>
                 <div className="flex items-center">
                   <CheckCircle className="h-5 w-5 text-purple-500 mr-2" aria-hidden="true" />
-                  <span>Global Presence</span>
+                  <span>Local Presence</span>
                 </div>
               </div>
             </SlideInRight>
@@ -276,24 +266,18 @@ export default function AboutPage() {
           </FadeInView>
 
           {/* Desktop grid - hidden on mobile and tablet */}
-          <div className="hidden lg:grid grid-cols-4 gap-8">
+          <div className="hidden lg:flex lg:justify-center lg:gap-8">
             {teamMembers.map((member, index) => (
-              <div key={index} className="bg-gray-800/50 border border-gray-700 rounded-xl overflow-hidden group">
+              <div key={index} className="bg-gray-800/50 border border-gray-700 rounded-xl overflow-hidden w-[320px] max-w-xs">
                 <div className="aspect-square relative">
                   <Image
                     src={member.image || "/placeholder.svg"}
                     alt={member.name}
                     width={400}
                     height={400}
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover max-h-[318px] object-center"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                    <div>
-                      <h3 className="text-xl font-bold">{member.name}</h3>
-                      <p className="text-gray-300">{member.role}</p>
-                    </div>
-                  </div>
                 </div>
                 <div className="p-4 text-center">
                   <h3 className="text-lg font-bold">{member.name}</h3>
@@ -304,25 +288,19 @@ export default function AboutPage() {
           </div>
 
           {/* Mobile and tablet scrollable cards */}
-          <div className="lg:hidden">
-            <CardGrid columns={{ mobile: 1, tablet: 2, desktop: 4 }} gap="gap-6">
+          <div className="lg:hidden flex justify-center">
+            <CardGrid columns={{ mobile: 1, tablet: 2, desktop: 2 }} gap="gap-6" className="justify-center">
               {teamMembers.map((member, index) => (
-                <div key={index} className="bg-gray-800/50 border-gray-700 rounded-xl overflow-hidden group">
+                <div key={index} className="bg-gray-800/50 border-gray-700 rounded-xl overflow-hidden w-[320px] max-w-xs">
                   <div className="aspect-square relative">
                     <Image
                       src={member.image || "/placeholder.svg"}
                       alt={member.name}
                       width={400}
                       height={400}
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-cover max-h-[318px] object-center"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                      <div>
-                        <h3 className="text-xl font-bold">{member.name}</h3>
-                        <p className="text-gray-300">{member.role}</p>
-                      </div>
-                    </div>
                   </div>
                   <div className="p-4 text-center">
                     <h3 className="text-lg font-bold">{member.name}</h3>

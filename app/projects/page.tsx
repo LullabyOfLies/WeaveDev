@@ -10,6 +10,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { FadeInView, AnimatedGradientText, AnimatedButton } from "@/components/animated-elements"
 import { CardGrid } from "@/components/card-grid"
 import { useState } from "react"
+import { SiReact, SiNodedotjs, SiPostgresql, SiRedis, SiMongodb } from "react-icons/si"
 
 // Project data
 const projects = [
@@ -230,108 +231,96 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* Project Types Section */}
-      <section className="py-16 bg-gray-900">
-        <div className="container mx-auto px-4">
-          <FadeInView className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">
-              Our <AnimatedGradientText>Expertise</AnimatedGradientText>
-            </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              We specialize in a wide range of project types, delivering tailored solutions for businesses of all sizes.
+      {/* DMS Project Section */}
+      <section className="py-16 md:py-24 border-b border-border">
+        <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-12 items-center">
+          <div className="flex-1">
+            <Image
+              src="/projects/dms-mockup.png"
+              alt="Document Management System mockup"
+              width={800}
+              height={600}
+              className="rounded-xl shadow-lg object-cover w-full"
+              loading="lazy"
+            />
+          </div>
+          <div className="flex-1">
+            <span className="text-xs text-cyan-400 font-medium mb-2 block">ENTERPRISE</span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Document Management System (DMS)</h2>
+            <p className="text-muted-foreground text-lg mb-6">
+              A robust document management platform enabling secure storage, easy retrieval, and seamless collaboration for enterprise teams. DMS streamlines document workflows, enhances compliance, and boosts productivity across organizations.
             </p>
-          </FadeInView>
-
-          <CardGrid columns={{ mobile: 1, tablet: 2, desktop: 5 }} gap="gap-6">
-            {featuredProjectTypes.map((type, index) => (
-              <Card
-                key={index}
-                className="bg-gray-800/50 border-gray-700 hover:border-purple-500/50 transition-colors h-full"
-              >
-                <CardContent className="p-6">
-                  <div className="mb-4">{type.icon}</div>
-                  <h3 className="text-xl font-bold mb-2">{type.title}</h3>
-                  <p className="text-gray-400 mb-4">{type.description}</p>
-                  <div className="text-sm text-gray-500">
-                    <span className="text-purple-400 font-bold">{type.count}</span> projects completed
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </CardGrid>
-        </div>
-      </section>
-
-      {/* Search and Filter Section */}
-      <section className="py-8 border-b border-border">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
-            <div className="relative w-full md:w-auto flex-1 max-w-md">
-              <Search
-                className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground"
-                aria-hidden="true"
-              />
-              <Input
-                type="text"
-                placeholder="Search projects..."
-                className="pl-10 bg-background border-border"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                aria-label="Search projects"
-              />
-            </div>
-
-            <div className="flex flex-wrap gap-2 w-full md:w-auto" role="radiogroup" aria-label="Filter by category">
-              <div className="flex items-center mr-2">
-                <Filter className="h-4 w-4 mr-2 text-muted-foreground" aria-hidden="true" />
-                <span className="text-sm font-medium">Filter:</span>
-              </div>
-              {categories.map((category) => (
-                <Button
-                  key={category}
-                  variant={selectedCategory === category ? "default" : "outline"}
-                  size="sm"
-                  onClick={() => setSelectedCategory(category)}
-                  className={
-                    selectedCategory === category
-                      ? "bg-gradient-to-r from-purple-600 to-cyan-500 text-white border-0"
-                      : "border-border"
-                  }
-                  aria-pressed={selectedCategory === category}
-                  role="radio"
-                >
-                  {category}
-                </Button>
+            <ul className="mb-6 space-y-3">
+              {[
+                "Secure, role-based access control",
+                "Advanced search and tagging",
+                "Real-time collaboration and versioning",
+                "Automated compliance tracking",
+              ].map((item, idx) => (
+                <li key={idx} className="flex items-center gap-3">
+                  <span className="inline-flex items-center justify-center w-7 h-7 rounded-full border border-white">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                  </span>
+                  <span className="text-muted-foreground">{item}</span>
+                </li>
               ))}
+            </ul>
+            <div className="flex flex-wrap gap-2 mb-6">
+              <span className="bg-background/20 px-3 py-1 rounded text-sm text-cyan-400 inline-flex items-center gap-1"><SiReact className="text-cyan-400" size={16} />React</span>
+              <span className="bg-background/20 px-3 py-1 rounded text-sm text-cyan-400 inline-flex items-center gap-1"><SiNodedotjs className="text-green-500" size={16} />Node.js</span>
+              <span className="bg-background/20 px-3 py-1 rounded text-sm text-cyan-400 inline-flex items-center gap-1"><SiPostgresql className="text-blue-500" size={16} />PostgreSQL</span>
+              <span className="bg-background/20 px-3 py-1 rounded text-sm text-cyan-400 inline-flex items-center gap-1"><SiRedis className="text-red-500" size={16} />Redis</span>
             </div>
+            <Link href="/contact">
+              <Button size="lg" className="btn-gradient">Book A Discovery Call</Button>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Projects Grid */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          {filteredProjects.length === 0 ? (
-            <div className="text-center py-20">
-              <h3 className="text-2xl font-bold mb-4">No projects found</h3>
-              <p className="text-muted-foreground mb-6">Try adjusting your search or filter criteria</p>
-              <Button
-                onClick={() => {
-                  setSearchTerm("")
-                  setSelectedCategory("ALL")
-                }}
-                className="btn-primary"
-              >
-                Reset Filters
-              </Button>
-            </div>
-          ) : (
-            <CardGrid columns={{ mobile: 1, tablet: 2, desktop: 3 }} gap="gap-8">
-              {filteredProjects.map((project) => (
-                <ProjectCard key={project.id} project={project} />
+      {/* OrDraft Project Section */}
+      <section className="py-16 md:py-24 border-b border-border">
+        <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-12 items-center">
+          <div className="flex-1 order-2 lg:order-1">
+            <span className="text-xs text-purple-400 font-medium mb-2 block">GOVERNMENT / LEGAL TECH</span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">OrDraft Legal Document Processing App</h2>
+            <p className="text-muted-foreground text-lg mb-6">
+              OrDraft is a legal document processing app for the Legal Unit of the Department of Environment and Natural Resources, enabling fast drafting, review, and management of legal documents for government compliance and efficiency.
+            </p>
+            <ul className="mb-6 space-y-3">
+              {[
+                "Automated document drafting and templates",
+                "Integrated review and approval workflows",
+                "Audit trails for compliance",
+                "Role-based permissions for sensitive data",
+              ].map((item, idx) => (
+                <li key={idx} className="flex items-center gap-3">
+                  <span className="inline-flex items-center justify-center w-7 h-7 rounded-full border border-white">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                  </span>
+                  <span className="text-muted-foreground">{item}</span>
+                </li>
               ))}
-            </CardGrid>
-          )}
+            </ul>
+            <div className="flex flex-wrap gap-2 mb-6">
+              <span className="bg-background/20 px-3 py-1 rounded text-sm text-purple-400 inline-flex items-center gap-1"><SiReact className="text-cyan-400" size={16} />React</span>
+              <span className="bg-background/20 px-3 py-1 rounded text-sm text-purple-400 inline-flex items-center gap-1"><SiNodedotjs className="text-green-500" size={16} />Node.js</span>
+              <span className="bg-background/20 px-3 py-1 rounded text-sm text-purple-400 inline-flex items-center gap-1"><SiMongodb className="text-green-600" size={16} />MongoDB</span>
+            </div>
+            <Link href="/contact">
+              <Button size="lg" className="btn-gradient">Book A Discovery Call</Button>
+            </Link>
+          </div>
+          <div className="flex-1 order-1 lg:order-2">
+            <Image
+              src="/projects/ordraft-mockup.png"
+              alt="OrDraft legal document processing app mockup"
+              width={800}
+              height={600}
+              className="rounded-xl shadow-lg object-cover w-full"
+              loading="lazy"
+            />
+          </div>
         </div>
       </section>
 
@@ -347,37 +336,29 @@ export default function ProjectsPage() {
             </p>
           </FadeInView>
 
-          <CardGrid columns={{ mobile: 3, tablet: 3, desktop: 3 }} gap="gap-8" scrollable={true} className="px-2.5">
-            <Card className="bg-gray-800/50 border-gray-700 p-6 text-center h-full card-hover-effect min-h-[268px] md:min-h-[332px] w-[100vw]">
-              <CardContent className="p-0 h-full">
-                <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-cyan-500 mb-2">
+          <CardGrid columns={{ mobile: 3, tablet: 3, desktop: 3 }} gap="gap-6" scrollable={true} className="px-2.5">
+            <Card className="bg-card/50 border-border hover:border-purple-500/50 transition-colors overflow-hidden group h-full card-hover-effect min-h-[180px] md:min-h-[200px]">
+              <CardContent className="p-4 card-content h-full flex flex-col items-center justify-center">
+                <div className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-cyan-500 mb-1">
                   98%
                 </div>
-                <p className="text-gray-300">Client Satisfaction Rate</p>
+                <p className="text-muted-foreground text-sm font-medium">Client Satisfaction Rate</p>
               </CardContent>
             </Card>
-            <Card className="bg-gray-800/50 border-gray-700 p-6 text-center h-full card-hover-effect min-h-[268px] md:min-h-[332px] w-[100vw]">
-              <CardContent className="p-0 h-full">
-                <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-cyan-500 mb-2">
-                  42
-                </div>
-                <p className="text-gray-300">Projects Completed Last Year</p>
-              </CardContent>
-            </Card>
-            <Card className="bg-gray-800/50 border-gray-700 p-6 text-center h-full card-hover-effect min-h-[268px] md:min-h-[332px] w-[100vw]">
-              <CardContent className="p-0 h-full">
-                <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-cyan-500 mb-2">
+            <Card className="bg-card/50 border-border hover:border-purple-500/50 transition-colors overflow-hidden group h-full card-hover-effect min-h-[180px] md:min-h-[200px]">
+              <CardContent className="p-4 card-content h-full flex flex-col items-center justify-center">
+                <div className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-cyan-500 mb-1">
                   15+
                 </div>
-                <p className="text-gray-300">Industries Served</p>
+                <p className="text-muted-foreground text-sm font-medium">Industries Served</p>
               </CardContent>
             </Card>
-            <Card className="bg-gray-800/50 border-gray-700 p-6 text-center h-full card-hover-effect min-h-[268px] md:min-h-[332px] w-[100vw]">
-              <CardContent className="p-0 h-full">
-                <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-cyan-500 mb-2">
+            <Card className="bg-card/50 border-border hover:border-purple-500/50 transition-colors overflow-hidden group h-full card-hover-effect min-h-[180px] md:min-h-[200px]">
+              <CardContent className="p-4 card-content h-full flex flex-col items-center justify-center">
+                <div className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-cyan-500 mb-1">
                   94%
                 </div>
-                <p className="text-gray-300">On-time Delivery</p>
+                <p className="text-muted-foreground text-sm font-medium">On-time Delivery</p>
               </CardContent>
             </Card>
           </CardGrid>

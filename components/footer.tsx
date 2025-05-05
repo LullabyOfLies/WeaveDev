@@ -141,40 +141,33 @@ export function Footer() {
               className="space-y-3"
             >
               <motion.li variants={itemVariants} className="mb-2">
-                <Link
-                  href="/services#custom-software"
-                  className="text-muted-foreground hover:text-cyan-400 transition-colors"
-                >
+                <Link href="/services#custom-software" className="text-muted-foreground hover:text-cyan-400 transition-colors">
                   Custom Software Development
                 </Link>
               </motion.li>
               <motion.li variants={itemVariants} className="mb-2">
-                <Link href="/services#web-apps" className="text-muted-foreground hover:text-cyan-400 transition-colors">
+                <Link href="/services#web-applications" className="text-muted-foreground hover:text-cyan-400 transition-colors">
                   Web Applications
                 </Link>
               </motion.li>
               <motion.li variants={itemVariants} className="mb-2">
-                <Link
-                  href="/services#mobile-apps"
-                  className="text-muted-foreground hover:text-cyan-400 transition-colors"
-                >
-                  Mobile Applications
+                <Link href="/services#branding-research" className="text-muted-foreground hover:text-cyan-400 transition-colors">
+                  Branding Research
                 </Link>
               </motion.li>
               <motion.li variants={itemVariants} className="mb-2">
-                <Link
-                  href="/services#cloud-solutions"
-                  className="text-muted-foreground hover:text-cyan-400 transition-colors"
-                >
-                  Cloud Solutions
+                <Link href="/services#low-no-code-apps" className="text-muted-foreground hover:text-cyan-400 transition-colors">
+                  Low/No Code Applications
+                </Link>
+              </motion.li>
+              <motion.li variants={itemVariants} className="mb-2">
+                <Link href="/services#ui-ux-design" className="text-muted-foreground hover:text-cyan-400 transition-colors">
+                  UI/UX Design
                 </Link>
               </motion.li>
               <motion.li variants={itemVariants}>
-                <Link
-                  href="/services#consulting"
-                  className="text-muted-foreground hover:text-cyan-400 transition-colors"
-                >
-                  IT Consulting
+                <Link href="/services#ai-integration" className="text-muted-foreground hover:text-cyan-400 transition-colors">
+                  AI Integration
                 </Link>
               </motion.li>
             </motion.ul>

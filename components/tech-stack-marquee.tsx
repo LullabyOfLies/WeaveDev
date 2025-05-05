@@ -70,7 +70,7 @@ export function TechStackMarquee() {
     { icon: SiMysql, name: "MySQL", color: "#4479A1", lightColor: "#fff" },
     { icon: SiDocker, name: "Docker", color: "#2496ED", lightColor: "#fff" },
     { icon: SiKubernetes, name: "Kubernetes", color: "#326CE5", lightColor: "#fff" },
-    { icon: SiTailwindcss, name: "Tailwind CSS", color: "#06B6D4", lightColor: "#fff" },
+    { icon: SiTailwindcss, name: "Tailwind", color: "#06B6D4", lightColor: "#fff" },
     { icon: SiSass, name: "Sass", color: "#CC6699", lightColor: "#fff" },
     { icon: SiRedux, name: "Redux", color: "#764ABC", lightColor: "#fff" },
     { icon: SiGraphql, name: "GraphQL", color: "#E10098", lightColor: "#fff" },
@@ -110,7 +110,7 @@ export function TechStackMarquee() {
 
         <div className="flex overflow-hidden">
           <motion.div
-            className="flex space-x-6 md:space-x-12 py-4" // Reduced spacing on mobile
+            className="flex space-x-6 md:space-x-12 pt-4 py-16" // Reduced spacing on mobile
             animate={controls}
             ref={ref}
           >

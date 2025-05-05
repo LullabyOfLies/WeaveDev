@@ -6,6 +6,7 @@ import { motion } from "framer-motion"
 import { Menu, Code } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import Image from "next/image"
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -50,9 +51,9 @@ export function Navbar() {
             <motion.div
               whileHover={{ rotate: 180 }}
               transition={{ duration: 0.5 }}
-              className="bg-gradient-to-r from-purple-600 to-cyan-500 p-2 rounded-lg"
+              className="p-2 rounded-lg"
             >
-              <Code className="h-6 w-6 text-white" />
+              <Image src="/projects/weave-icon-ico.ico" alt="WeaveDev Logo" width={24} height={24} className="h-6 w-6" />
             </motion.div>
             <motion.span
               initial={{ opacity: 0, x: -10 }}
@@ -111,8 +112,8 @@ export function Navbar() {
                 >
                   <div className="flex items-center justify-between mb-8">
                     <Link href="/" className="flex items-center gap-2" aria-label="WeaveDev Co. Home">
-                      <div className="bg-gradient-to-r from-purple-600 to-cyan-500 p-2 rounded-lg">
-                        <Code className="h-5 w-5 text-white" />
+                      <div className="p-2 rounded-lg">
+                        <Image src="/projects/weave-icon-ico.ico" alt="WeaveDev Logo" width={20} height={20} className="h-5 w-5" />
                       </div>
                       <span className="text-lg font-bold">WeaveDev Co.</span>
                     </Link>

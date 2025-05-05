@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, Code, Database, Globe, Layers, Smartphone, Sparkles } from "lucide-react"
+import { ArrowRight, Code, Database, Globe, Layers, Smartphone, Sparkles, BarChart, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { TechStackMarquee } from "@/components/tech-stack-marquee"
@@ -22,34 +22,34 @@ export default function Home() {
   // Services data
   const services = [
     {
-      icon: <Code className="h-10 w-10 text-purple-500" aria-hidden="true" />,
+      icon: <Code className="h-10 w-10" aria-hidden="true" />,
       title: "Custom Software Development",
       description: "Tailored solutions designed to address your specific business challenges and requirements.",
     },
     {
-      icon: <Globe className="h-10 w-10 text-cyan-500" aria-hidden="true" />,
+      icon: <Globe className="h-10 w-10" aria-hidden="true" />,
       title: "Web Applications",
       description: "Responsive, scalable web applications built with modern technologies for optimal performance.",
     },
     {
-      icon: <Smartphone className="h-10 w-10 text-purple-500" aria-hidden="true" />,
-      title: "Mobile Applications",
-      description: "Native and cross-platform mobile apps that deliver exceptional user experiences.",
+      icon: <BarChart className="h-10 w-10" aria-hidden="true" />,
+      title: "Branding Research",
+      description: "In-depth research and analysis to help you build a strong, memorable brand that resonates with your audience.",
     },
     {
-      icon: <Database className="h-10 w-10 text-cyan-500" aria-hidden="true" />,
-      title: "Cloud Solutions",
-      description: "Secure, scalable cloud infrastructure and migration services to optimize your operations.",
+      icon: <Zap className="h-10 w-10" aria-hidden="true" />,
+      title: "Low/No Code Applications",
+      description: "Rapidly build and deploy business solutions with low-code and no-code platforms, empowering your team to innovate without deep technical expertise.",
     },
     {
-      icon: <Layers className="h-10 w-10 text-purple-500" aria-hidden="true" />,
-      title: "IT Consulting",
-      description: "Strategic technology guidance to help you make informed decisions for your business.",
-    },
-    {
-      icon: <Sparkles className="h-10 w-10 text-cyan-500" aria-hidden="true" />,
+      icon: <Layers className="h-10 w-10" aria-hidden="true" />,
       title: "UI/UX Design",
       description: "Intuitive, engaging user interfaces that enhance user satisfaction and retention.",
+    },
+    {
+      icon: <Sparkles className="h-10 w-10" aria-hidden="true" />,
+      title: "AI Integration",
+      description: "Empower your business with AI. We help you identify, integrate, and optimize the best AI tools for your unique needs.",
     },
   ]
 
@@ -100,8 +100,8 @@ export default function Home() {
                 className="bg-card/50 border-border hover:border-purple-500/50 transition-colors overflow-hidden group h-full card-hover-effect min-h-[268px] md:min-h-[332px]"
               >
                 <CardContent className="p-4 md:p-6 card-content h-full">
-                  <div className="mb-4 p-2 md:p-3 bg-background rounded-lg w-fit group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-cyan-500 transition-colors duration-300">
-                    {service.icon}
+                  <div className="mb-4 p-2 md:p-3 rounded-lg w-fit group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-cyan-500 transition-colors duration-300">
+                    <span className="transition-colors duration-300 group-hover:text-white text-purple-500 text-cyan-500">{service.icon}</span>
                   </div>
                   <h3 className="text-lg md:text-xl font-bold mb-2">{service.title}</h3>
                   <p className="text-muted-foreground text-sm md:text-base flex-grow">{service.description}</p>
@@ -147,12 +147,12 @@ export default function Home() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
             <SlideInLeft>
-              <Link href="/projects/banking-platform" className="block h-full">
+              <Link href="/projects/dms" className="block h-full">
                 <div className="relative rounded-xl overflow-hidden border border-border group h-full hover:border-purple-500/50 transition-colors card-hover-effect">
                   <div className="aspect-[4/3]">
                     <Image
-                      src="/placeholder.svg?height=800&width=1200"
-                      alt="Banking Platform project"
+                      src="/projects/dms-mockup.png"
+                      alt="Document Management System mockup"
                       width={800}
                       height={600}
                       className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
@@ -160,11 +160,10 @@ export default function Home() {
                     />
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex flex-col justify-end p-4 md:p-6">
-                    <span className="text-xs text-cyan-400 font-medium mb-2">FINTECH</span>
-                    <h3 className="text-xl md:text-2xl font-bold mb-2 text-white">Modern Banking Platform</h3>
+                    <span className="text-xs text-cyan-400 font-medium mb-2">ENTERPRISE</span>
+                    <h3 className="text-xl md:text-2xl font-bold mb-2 text-white">Document Management System (DMS)</h3>
                     <p className="text-gray-300 mb-4 text-sm md:text-base">
-                      A comprehensive digital banking solution with advanced security features and intuitive user
-                      experience.
+                      A robust document management platform enabling secure storage, easy retrieval, and seamless collaboration for enterprise teams.
                     </p>
                     <div className="inline-flex items-center text-white font-medium">
                       View Project
@@ -179,12 +178,12 @@ export default function Home() {
             </SlideInLeft>
 
             <SlideInRight>
-              <Link href="/projects/healthcare-system" className="block h-full">
+              <Link href="/projects/ordraft" className="block h-full">
                 <div className="relative rounded-xl overflow-hidden border border-border group h-full hover:border-purple-500/50 transition-colors card-hover-effect">
                   <div className="aspect-[4/3]">
                     <Image
-                      src="/placeholder.svg?height=800&width=1200"
-                      alt="Healthcare System project"
+                      src="/projects/ordraft-mockup.png"
+                      alt="OrDraft legal document processing app mockup"
                       width={800}
                       height={600}
                       className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
@@ -192,10 +191,10 @@ export default function Home() {
                     />
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex flex-col justify-end p-4 md:p-6">
-                    <span className="text-xs text-purple-400 font-medium mb-2">HEALTHCARE</span>
-                    <h3 className="text-xl md:text-2xl font-bold mb-2 text-white">Patient Management System</h3>
+                    <span className="text-xs text-purple-400 font-medium mb-2">GOVERNMENT / LEGAL TECH</span>
+                    <h3 className="text-xl md:text-2xl font-bold mb-2 text-white">OrDraft Legal Document Processing App</h3>
                     <p className="text-gray-300 mb-4 text-sm md:text-base">
-                      A secure, HIPAA-compliant platform that streamlines patient care and administrative workflows.
+                      OrDraft is a legal document processing app for the Legal Unit of the Department of Environment and Natural Resources, enabling fast drafting, review, and management of legal documents for government compliance and efficiency.
                     </p>
                     <div className="inline-flex items-center text-white font-medium">
                       View Project

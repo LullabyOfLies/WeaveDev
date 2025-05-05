@@ -22,6 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth dark">
+      <head>
+        <link rel="icon" href="/projects/weave-icon-ico.ico" type="image/x-icon" />
+      </head>
       <body className={`${inter.className} bg-background text-foreground`}>
         <SmoothScroll>
           <ScrollIndicator />

@@ -31,58 +31,40 @@ export default function ServicesPage() {
   // Services data
   const services = [
     {
-      icon: <Code className="h-10 w-10 text-purple-500" aria-hidden="true" />,
+      icon: <Code className="h-10 w-10" aria-hidden="true" />,
       title: "Custom Software Development",
       description: "Tailored solutions designed to address your specific business challenges and requirements.",
       link: "#custom-software",
     },
     {
-      icon: <Globe className="h-10 w-10 text-cyan-500" aria-hidden="true" />,
+      icon: <Globe className="h-10 w-10" aria-hidden="true" />,
       title: "Web Applications",
       description: "Responsive, scalable web applications built with modern technologies for optimal performance.",
-      link: "#web-apps",
+      link: "#web-applications",
     },
     {
-      icon: <Smartphone className="h-10 w-10 text-purple-500" aria-hidden="true" />,
-      title: "Mobile Applications",
-      description: "Native and cross-platform mobile apps that deliver exceptional user experiences.",
-      link: "#mobile-apps",
+      icon: <Sparkles className="h-10 w-10" aria-hidden="true" />,
+      title: "Branding Research",
+      description: "In-depth research and analysis to help you build a strong, memorable brand that resonates with your audience.",
+      link: "#branding-research",
     },
     {
-      icon: <Database className="h-10 w-10 text-cyan-500" aria-hidden="true" />,
-      title: "Cloud Solutions",
-      description: "Secure, scalable cloud infrastructure and migration services to optimize your operations.",
-      link: "#cloud-solutions",
+      icon: <Zap className="h-10 w-10" aria-hidden="true" />,
+      title: "Low/No Code Applications",
+      description: "Rapidly build and deploy business solutions with low-code and no-code platforms, empowering your team to innovate without deep technical expertise.",
+      link: "#low-no-code-apps",
     },
     {
-      icon: <Layers className="h-10 w-10 text-purple-500" aria-hidden="true" />,
-      title: "IT Consulting",
-      description: "Strategic technology guidance to help you make informed decisions for your business.",
-      link: "#consulting",
-    },
-    {
-      icon: <Sparkles className="h-10 w-10 text-cyan-500" aria-hidden="true" />,
+      icon: <Sparkles className="h-10 w-10" aria-hidden="true" />,
       title: "UI/UX Design",
       description: "Intuitive, engaging user interfaces that enhance user satisfaction and retention.",
       link: "#ui-ux-design",
     },
     {
-      icon: <BarChart className="h-10 w-10 text-purple-500" aria-hidden="true" />,
-      title: "Data Analytics",
-      description: "Transform your raw data into actionable insights with custom analytics solutions.",
-      link: "#data-analytics",
-    },
-    {
-      icon: <Shield className="h-10 w-10 text-cyan-500" aria-hidden="true" />,
-      title: "Cybersecurity",
-      description: "Protect your digital assets with comprehensive security assessments and solutions.",
-      link: "#cybersecurity",
-    },
-    {
-      icon: <Zap className="h-10 w-10 text-purple-500" aria-hidden="true" />,
-      title: "DevOps & Automation",
-      description: "Streamline your development and deployment processes for greater efficiency.",
-      link: "#devops",
+      icon: <Sparkles className="h-10 w-10" aria-hidden="true" />,
+      title: "AI Integration",
+      description: "Empower your business with AI. We help you identify, integrate, and optimize the best AI tools for your unique needs.",
+      link: "#ai-integration",
     },
   ]
 
@@ -122,16 +104,18 @@ export default function ServicesPage() {
       {/* Services Overview */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <CardGrid columns={{ mobile: 3, tablet: 3, desktop: 3 }} gap="gap-8" scrollable={true} className="px-2.5">
+          <CardGrid columns={{ mobile: 3, tablet: 3, desktop: 3 }} gap="gap-6" scrollable={true} className="px-2.5">
             {services.map((service, index) => (
               <Link key={index} href={service.link}>
-                <Card className="bg-gray-800/50 border-gray-700 hover:border-purple-500/50 transition-colors overflow-hidden group h-full card-hover-effect md:min-h-[332px] w-[100vw]">
-                  <CardContent className="p-6 h-full">
-                    <div className="mb-4 p-3 bg-gray-900 rounded-lg w-fit group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-cyan-500 transition-colors duration-300">
-                      {service.icon}
+                <Card
+                  className="bg-card/50 border-border hover:border-purple-500/50 transition-colors overflow-hidden group h-full card-hover-effect min-h-[268px] md:min-h-[332px]"
+                >
+                  <CardContent className="p-4 md:p-6 card-content h-full">
+                    <div className="mb-4 p-2 md:p-3 rounded-lg w-fit group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-cyan-500 transition-colors duration-300">
+                      <span className="transition-colors duration-300 group-hover:text-white text-purple-500 text-cyan-500">{service.icon}</span>
                     </div>
-                    <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                    <p className="text-gray-400">{service.description}</p>
+                    <h3 className="text-lg md:text-xl font-bold mb-2">{service.title}</h3>
+                    <p className="text-muted-foreground text-sm md:text-base flex-grow">{service.description}</p>
                     <div className="mt-4 flex items-center text-purple-400 group-hover:text-cyan-400 transition-colors">
                       <span className="text-sm font-medium">Learn more</span>
                       <ArrowRight
@@ -210,13 +194,13 @@ export default function ServicesPage() {
 
             <SlideInRight>
               <div className="relative">
-                <div className="aspect-[4/3] rounded-xl overflow-hidden border border-gray-700">
+                <div className="aspect-[4/3] rounded-xl overflow-hidden border border-gray-700 bg-white flex items-center justify-center">
                   <Image
-                    src="/placeholder.svg?height=600&width=800"
+                    src="/projects/custom-soft.jpg"
                     alt="Custom Software Development"
                     width={800}
                     height={600}
-                    className="object-cover"
+                    className="object-contain"
                     loading="lazy"
                   />
                 </div>
@@ -230,163 +214,369 @@ export default function ServicesPage() {
       </section>
 
       {/* Web Applications */}
-      <section id="web-apps" className="py-20">
+      <section id="web-applications" className="py-20">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <SlideInLeft className="order-2 lg:order-1">
+            <SlideInLeft>
               <div className="relative">
-                <div className="aspect-[4/3] rounded-xl overflow-hidden border border-gray-700">
+                <div className="aspect-[4/3] rounded-xl overflow-hidden border border-gray-700 bg-white flex items-center justify-center">
                   <Image
-                    src="/placeholder.svg?height=600&width=800"
+                    src="/projects/web-app.png"
                     alt="Web Applications"
                     width={800}
                     height={600}
-                    className="object-cover"
+                    className="object-contain"
+                    loading="lazy"
                   />
                 </div>
-                <div className="absolute -top-6 -right-6 bg-gradient-to-r from-purple-600 to-cyan-500 p-4 rounded-lg shadow-xl">
-                  <Globe className="h-8 w-8 text-white" />
+                <div className="absolute -bottom-6 -left-6 bg-gradient-to-r from-purple-600 to-cyan-500 p-4 rounded-lg shadow-xl">
+                  <Globe className="h-8 w-8 text-white" aria-hidden="true" />
                 </div>
               </div>
             </SlideInLeft>
-
-            <SlideInRight className="order-1 lg:order-2">
-              <h2 className="text-3xl font-bold mb-6">
+            <SlideInRight>
+            <h2 className="text-3xl font-bold mb-6">
                 Web <AnimatedGradientText>Applications</AnimatedGradientText>
               </h2>
               <p className="text-gray-300 mb-6">
-                We build responsive, scalable web applications that deliver exceptional user experiences across all
-                devices. Our web development team leverages modern technologies and frameworks to create
-                high-performance applications that meet your business objectives.
+                We build responsive, scalable web applications using the latest technologies to ensure optimal performance, security, and user experience. Our team delivers solutions tailored to your business needs, from customer portals to complex SaaS platforms.
               </p>
               <p className="text-gray-300 mb-6">
-                Whether you need a customer-facing application, an internal tool, or a complex web platform, we have the
-                expertise to deliver solutions that are both technically excellent and user-friendly.
+                Whether you need a new web app or want to modernize an existing one, we guide you from concept to deployment, ensuring seamless integration and future scalability.
               </p>
-
               <div className="space-y-4 mb-8">
                 <div className="flex items-start">
-                  <div className="mt-1 bg-purple-500/20 p-1 rounded-full">
-                    <CheckCircle className="h-5 w-5 text-purple-500" />
+                  <div className="mt-1 bg-cyan-500/20 p-1 rounded-full">
+                    <Globe className="h-5 w-5 text-cyan-500" aria-hidden="true" />
                   </div>
                   <div className="ml-3">
-                    <h4 className="font-semibold">Progressive Web Apps (PWAs)</h4>
-                    <p className="text-gray-400">
-                      Fast, reliable applications that work offline and provide a native app-like experience.
-                    </p>
+                    <h4 className="font-semibold">Modern Tech Stack</h4>
+                    <p className="text-gray-400">React, Next.js, Node.js, and more for robust, maintainable apps.</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="mt-1 bg-purple-500/20 p-1 rounded-full">
+                    <Globe className="h-5 w-5 text-purple-500" aria-hidden="true" />
+                  </div>
+                  <div className="ml-3">
+                    <h4 className="font-semibold">Responsive Design</h4>
+                    <p className="text-gray-400">Optimized for all devices and screen sizes.</p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <div className="mt-1 bg-cyan-500/20 p-1 rounded-full">
-                    <CheckCircle className="h-5 w-5 text-cyan-500" />
+                    <Globe className="h-5 w-5 text-cyan-500" aria-hidden="true" />
                   </div>
                   <div className="ml-3">
-                    <h4 className="font-semibold">Single Page Applications (SPAs)</h4>
-                    <p className="text-gray-400">
-                      Dynamic applications that provide a smooth, seamless user experience without page reloads.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="mt-1 bg-purple-500/20 p-1 rounded-full">
-                    <CheckCircle className="h-5 w-5 text-purple-500" />
-                  </div>
-                  <div className="ml-3">
-                    <h4 className="font-semibold">E-commerce Solutions</h4>
-                    <p className="text-gray-400">
-                      Secure, scalable online stores with seamless payment processing and inventory management.
-                    </p>
+                    <h4 className="font-semibold">Custom Integrations</h4>
+                    <p className="text-gray-400">Seamlessly connect with APIs, databases, and third-party services.</p>
                   </div>
                 </div>
               </div>
-
               <AnimatedButton>
                 <Button className="bg-gradient-to-r from-purple-600 to-cyan-500 border-0 text-white hover:opacity-90">
-                  Explore Web Solutions
+                  Start Your Web Project
                 </Button>
               </AnimatedButton>
+        
             </SlideInRight>
           </div>
         </div>
       </section>
 
-      {/* Mobile Applications */}
-      <section id="mobile-apps" className="py-20 bg-gray-900">
+      {/* Branding Research */}
+      <section id="branding-research" className="py-20">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <SlideInLeft>
-              <h2 className="text-3xl font-bold mb-6">
-                Mobile <AnimatedGradientText>Applications</AnimatedGradientText>
+           <h2 className="text-3xl font-bold mb-6">
+                Branding <AnimatedGradientText>Research</AnimatedGradientText>
               </h2>
               <p className="text-gray-300 mb-6">
-                We develop native and cross-platform mobile applications that engage users and drive business growth.
-                Our mobile development team creates intuitive, feature-rich apps that deliver exceptional experiences on
-                iOS and Android devices.
+                Our branding research service provides in-depth analysis and insights to help you build a strong, memorable brand that resonates with your target audience. We combine qualitative and quantitative research methods to uncover what makes your brand unique and how you can stand out in the market.
               </p>
               <p className="text-gray-300 mb-6">
-                From concept to deployment, we focus on creating mobile solutions that align with your business
-                objectives while meeting the highest standards of performance, security, and user experience.
+                From competitor analysis to audience perception studies, we deliver actionable recommendations that empower your business to make informed branding decisions and foster lasting connections with your customers.
               </p>
-
               <div className="space-y-4 mb-8">
                 <div className="flex items-start">
-                  <div className="mt-1 bg-purple-500/20 p-1 rounded-full">
-                    <CheckCircle className="h-5 w-5 text-purple-500" />
+                  <div className="mt-1 bg-cyan-500/20 p-1 rounded-full">
+                    <Sparkles className="h-5 w-5 text-cyan-500" aria-hidden="true" />
                   </div>
                   <div className="ml-3">
-                    <h4 className="font-semibold">Native iOS & Android Apps</h4>
+                    <h4 className="font-semibold">Competitor Analysis</h4>
                     <p className="text-gray-400">
-                      Platform-specific applications that leverage the full capabilities of each operating system.
+                      Understand your market landscape and identify opportunities to differentiate your brand.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="mt-1 bg-purple-500/20 p-1 rounded-full">
+                    <Sparkles className="h-5 w-5 text-purple-500" aria-hidden="true" />
+                  </div>
+                  <div className="ml-3">
+                    <h4 className="font-semibold">Audience Insights</h4>
+                    <p className="text-gray-400">
+                      Discover what your audience values and how they perceive your brand.
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <div className="mt-1 bg-cyan-500/20 p-1 rounded-full">
-                    <CheckCircle className="h-5 w-5 text-cyan-500" />
+                    <Sparkles className="h-5 w-5 text-cyan-500" aria-hidden="true" />
                   </div>
                   <div className="ml-3">
-                    <h4 className="font-semibold">Cross-Platform Development</h4>
+                    <h4 className="font-semibold">Brand Positioning</h4>
                     <p className="text-gray-400">
-                      Efficient solutions that work seamlessly across multiple platforms with a single codebase.
+                      Get actionable recommendations to position your brand for long-term success.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <AnimatedButton>
+                <Button className="bg-gradient-to-r from-purple-600 to-cyan-500 border-0 text-white hover:opacity-90">
+                  Start Your Brand Research
+                </Button>
+              </AnimatedButton>
+            </SlideInLeft>
+            <SlideInRight>
+             <div className="relative">
+                <div className="aspect-[4/3] rounded-xl overflow-hidden border border-gray-700 bg-white flex items-center justify-center">
+                  <Image
+                    src="/projects/branding.png"
+                    alt="Branding Research"
+                    width={800}
+                    height={600}
+                    className="object-contain"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="absolute -bottom-6 -left-6 bg-gradient-to-r from-purple-600 to-cyan-500 p-4 rounded-lg shadow-xl">
+                  <Sparkles className="h-8 w-8 text-white" aria-hidden="true" />
+                </div>
+              </div>   
+            </SlideInRight>
+          </div>
+        </div>
+      </section>
+
+      {/* Low/No code Applications */}
+      <section id="low-no-code-apps" className="py-20 bg-gray-900">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <SlideInLeft>
+             <div className="relative">
+                <div className="aspect-[4/3] rounded-xl overflow-hidden border border-gray-700 bg-white flex items-center justify-center">
+                  <Image
+                    src="/projects/no-code.jpeg"
+                    alt="Low/No Code Applications"
+                    width={800}
+                    height={600}
+                    className="object-contain"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="absolute -bottom-6 -left-6 bg-gradient-to-r from-purple-600 to-cyan-500 p-4 rounded-lg shadow-xl">
+                  <Zap className="h-8 w-8 text-white" aria-hidden="true" />
+                </div>
+              </div>
+            </SlideInLeft>
+            <SlideInRight>
+ <h2 className="text-3xl font-bold mb-6">
+                Low/No code <AnimatedGradientText>Applications</AnimatedGradientText>
+              </h2>
+              <p className="text-gray-300 mb-6">
+                Accelerate your digital transformation with our low-code and no-code application development services. We empower your team to build, customize, and deploy business solutions quickly—without the need for deep technical expertise.
+              </p>
+              <p className="text-gray-300 mb-6">
+                From automating workflows to creating custom dashboards and internal tools, our experts help you leverage leading platforms to solve business challenges, reduce costs, and innovate faster.
+              </p>
+              <div className="space-y-4 mb-8">
+                <div className="flex items-start">
+                  <div className="mt-1 bg-purple-500/20 p-1 rounded-full">
+                    <Zap className="h-5 w-5 text-purple-500" aria-hidden="true" />
+                  </div>
+                  <div className="ml-3">
+                    <h4 className="font-semibold">Rapid Prototyping</h4>
+                    <p className="text-gray-400">
+                      Quickly turn ideas into working applications with visual development tools and pre-built components.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="mt-1 bg-cyan-500/20 p-1 rounded-full">
+                    <Zap className="h-5 w-5 text-cyan-500" aria-hidden="true" />
+                  </div>
+                  <div className="ml-3">
+                    <h4 className="font-semibold">Workflow Automation</h4>
+                    <p className="text-gray-400">
+                      Streamline repetitive tasks and processes with easy-to-configure automation.
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <div className="mt-1 bg-purple-500/20 p-1 rounded-full">
-                    <CheckCircle className="h-5 w-5 text-purple-500" />
+                    <Zap className="h-5 w-5 text-purple-500" aria-hidden="true" />
                   </div>
                   <div className="ml-3">
-                    <h4 className="font-semibold">Mobile App Modernization</h4>
+                    <h4 className="font-semibold">Custom Business Apps</h4>
                     <p className="text-gray-400">
-                      Update and enhance existing mobile applications to improve performance and user experience.
+                      Build tailored solutions for your unique business needs—without writing code.
                     </p>
                   </div>
                 </div>
               </div>
-
               <AnimatedButton>
                 <Button className="bg-gradient-to-r from-purple-600 to-cyan-500 border-0 text-white hover:opacity-90">
-                  Discuss Your Mobile App
+                  Explore Low/No code Solutions
                 </Button>
               </AnimatedButton>
-            </SlideInLeft>
+            {/*  */}
+              
+            </SlideInRight>
+          </div>
+        </div>
+      </section>
 
-            <SlideInRight>
-              <div className="relative">
-                <div className="aspect-[4/3] rounded-xl overflow-hidden border border-gray-700">
+      {/* UI/UX Design */}
+      <section id="ui-ux-design" className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <SlideInRight className="order-2 lg:order-2">
+               <div className="relative">
+                <div className="aspect-[4/3] rounded-xl overflow-hidden border border-gray-700 bg-white flex items-center justify-center">
                   <Image
-                    src="/placeholder.svg?height=600&width=800"
-                    alt="Mobile Applications"
+                    src="/projects/ui-ux.jpg"
+                    alt="UI/UX Design"
                     width={800}
                     height={600}
-                    className="object-cover"
+                    className="object-contain"
+                    loading="lazy"
                   />
                 </div>
-                <div className="absolute -bottom-6 -right-6 bg-gradient-to-r from-purple-600 to-cyan-500 p-4 rounded-lg shadow-xl">
-                  <Smartphone className="h-8 w-8 text-white" />
+                <div className="absolute -bottom-6 -left-6 bg-gradient-to-r from-purple-600 to-cyan-500 p-4 rounded-lg shadow-xl">
+                  <Sparkles className="h-8 w-8 text-white" aria-hidden="true" />
                 </div>
               </div>
             </SlideInRight>
+            <SlideInLeft className="order-1 lg:order-1">
+            <h2 className="text-3xl font-bold mb-6">
+                UI/UX <AnimatedGradientText>Design</AnimatedGradientText>
+              </h2>
+              <p className="text-gray-300 mb-6">
+                Our UI/UX design services focus on creating intuitive, engaging, and visually appealing interfaces that delight users and drive business results. We blend creativity with usability to ensure every interaction is meaningful and memorable.
+              </p>
+              <p className="text-gray-300 mb-6">
+                From wireframes to high-fidelity prototypes, our team collaborates closely with you to understand your brand, users, and goals—delivering designs that are both beautiful and functional.
+              </p>
+              <div className="space-y-4 mb-8">
+                <div className="flex items-start">
+                  <div className="mt-1 bg-purple-500/20 p-1 rounded-full">
+                    <Sparkles className="h-5 w-5 text-purple-500" aria-hidden="true" />
+                  </div>
+                  <div className="ml-3">
+                    <h4 className="font-semibold">User-Centered Design</h4>
+                    <p className="text-gray-400">We prioritize user needs and behaviors to craft seamless, enjoyable experiences.</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="mt-1 bg-cyan-500/20 p-1 rounded-full">
+                    <Sparkles className="h-5 w-5 text-cyan-500" aria-hidden="true" />
+                  </div>
+                  <div className="ml-3">
+                    <h4 className="font-semibold">Prototyping & Testing</h4>
+                    <p className="text-gray-400">Interactive prototypes and user testing ensure your product is intuitive and effective.</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="mt-1 bg-purple-500/20 p-1 rounded-full">
+                    <Sparkles className="h-5 w-5 text-purple-500" aria-hidden="true" />
+                  </div>
+                  <div className="ml-3">
+                    <h4 className="font-semibold">Brand Consistency</h4>
+                    <p className="text-gray-400">We maintain your brand identity across all touchpoints for a cohesive experience.</p>
+                  </div>
+                </div>
+              </div>
+              <AnimatedButton>
+                <Button className="bg-gradient-to-r from-purple-600 to-cyan-500 border-0 text-white hover:opacity-90">
+                  Start Your Design Project
+                </Button>
+              </AnimatedButton>
+            {/*  */}
+           
+            </SlideInLeft>
+          </div>
+        </div>
+      </section>
+
+      {/* AI Integration */}
+      <section id="ai-integration" className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <SlideInRight className="order-2 lg:order-2">
+            <h2 className="text-3xl font-bold mb-6">
+                <AnimatedGradientText>AI Integration</AnimatedGradientText>
+              </h2>
+              <p className="text-gray-300 mb-6">
+                Empower your business with AI. We help you identify, integrate, and optimize the best AI tools for your unique needs, driving innovation and efficiency across your operations.
+              </p>
+              <p className="text-gray-300 mb-6">
+                Our experts guide you through the rapidly evolving AI landscape, ensuring seamless adoption and maximum value from artificial intelligence solutions tailored to your goals.
+              </p>
+              <div className="space-y-4 mb-8">
+                <div className="flex items-start">
+                  <div className="mt-1 bg-purple-500/20 p-1 rounded-full">
+                    <Sparkles className="h-5 w-5 text-purple-500" aria-hidden="true" />
+                  </div>
+                  <div className="ml-3">
+                    <h4 className="font-semibold">AI Tool Selection</h4>
+                    <p className="text-gray-400">We evaluate your needs and recommend the most effective AI tools and platforms for your business.</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="mt-1 bg-cyan-500/20 p-1 rounded-full">
+                    <Sparkles className="h-5 w-5 text-cyan-500" aria-hidden="true" />
+                  </div>
+                  <div className="ml-3">
+                    <h4 className="font-semibold">Seamless Integration</h4>
+                    <p className="text-gray-400">We ensure smooth integration of AI solutions into your existing workflows and systems.</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="mt-1 bg-purple-500/20 p-1 rounded-full">
+                    <Sparkles className="h-5 w-5 text-purple-500" aria-hidden="true" />
+                  </div>
+                  <div className="ml-3">
+                    <h4 className="font-semibold">Ongoing Optimization</h4>
+                    <p className="text-gray-400">We monitor and refine your AI integrations to maximize performance and ROI.</p>
+                  </div>
+                </div>
+              </div>
+              <AnimatedButton>
+                <Button className="bg-gradient-to-r from-purple-600 to-cyan-500 border-0 text-white hover:opacity-90">
+                  Start Your AI Journey
+                </Button>
+              </AnimatedButton>
+            </SlideInRight>
+            <SlideInLeft className="order-1 lg:order-1">
+              <div className="relative">
+                <div className="aspect-[4/3] rounded-xl overflow-hidden border border-gray-700 bg-white flex items-center justify-center">
+                  <Image
+                    src="/projects/ai.jpg"
+                    alt="AI Integration"
+                    width={800}
+                    height={600}
+                    className="object-contain"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="absolute -bottom-6 -left-6 bg-gradient-to-r from-purple-600 to-cyan-500 p-4 rounded-lg shadow-xl">
+                  <Sparkles className="h-8 w-8 text-white" aria-hidden="true" />
+                </div>
+              </div>
+            {/*  */}
+            </SlideInLeft>
           </div>
         </div>
       </section>
