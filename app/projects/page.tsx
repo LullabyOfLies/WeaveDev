@@ -236,7 +236,7 @@ export default function ProjectsPage() {
         <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-12 items-center">
           <div className="flex-1">
             <Image
-              src="/projects/dms-mockup.png"
+              src="/projects/DMS-Mockup.png"
               alt="Document Management System mockup"
               width={800}
               height={600}
