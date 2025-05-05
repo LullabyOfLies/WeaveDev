@@ -151,7 +151,7 @@ export default function Home() {
                 <div className="relative rounded-xl overflow-hidden border border-border group h-full hover:border-purple-500/50 transition-colors card-hover-effect">
                   <div className="aspect-[4/3]">
                     <Image
-                      src="/projects/dms-mockup.png"
+                      src="/projects/DMS-Mockup.png"
                       alt="Document Management System mockup"
                       width={800}
                       height={600}
