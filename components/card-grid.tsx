@@ -96,7 +96,7 @@ export function CardGrid({
     <div className="relative">
       <div
         ref={scrollContainerRef}
-        className={cn("flex overflow-x-auto pb-6 gap-4 snap-x snap-mandatory scrollbar-hide -mx-4 px-4", className)}
+        className={cn("flex overflow-x-auto pb-6 gap-4 sm:gap-0 snap-x snap-mandatory scrollbar-hide -mx-4  p-4", className)}
         style={{
           scrollbarWidth: "none",
           msOverflowStyle: "none",
@@ -105,10 +105,11 @@ export function CardGrid({
       >
         {React.Children.map(children, (child) => {
           if (!React.isValidElement(child)) return child
-
-          return React.cloneElement(child, {
-            ...child.props,
-            className: cn(child.props.className || "", "snap-start flex-shrink-0 min-w-[350px] w-[85%] sm:w-[45%]"),
+          const element = child as React.ReactElement<any, any>
+          const childProps = (element.props && typeof element.props === 'object') ? element.props : {}
+          return React.cloneElement(element, {
+            ...(typeof childProps === 'object' ? childProps : {}),
+            className: cn(childProps.className || '', 'snap-start flex-shrink-0 max-w-screen px-[5px] w-[85%] sm:w-[100%]'),
           })
         })}
       </div>

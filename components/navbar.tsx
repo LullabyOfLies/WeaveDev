@@ -5,11 +5,12 @@ import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Menu, Code } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
 import Image from "next/image"
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [open, setOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -97,13 +98,14 @@ export function Navbar() {
 
           {/* Mobile Navigation */}
           <div className="flex items-center md:hidden">
-            <Sheet>
+            <Sheet open={open} onOpenChange={setOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" aria-label="Menu" className="relative z-50">
                   <Menu className="h-6 w-6 text-foreground" />
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="border-border bg-background">
+                <SheetTitle className="sr-only">Mobile Navigation Menu</SheetTitle>
                 <motion.div
                   className="flex flex-col h-full"
                   initial={{ opacity: 0, x: 20 }}
@@ -111,7 +113,7 @@ export function Navbar() {
                   transition={{ duration: 0.3 }}
                 >
                   <div className="flex items-center justify-between mb-8">
-                    <Link href="/" className="flex items-center gap-2" aria-label="WeaveDev Co. Home">
+                    <Link href="/" className="flex items-center gap-2" aria-label="WeaveDev Co. Home" onClick={() => setOpen(false)}>
                       <div className="p-2 rounded-lg">
                         <Image src="/projects/weave-icon-ico.ico" alt="WeaveDev Logo" width={20} height={20} className="h-5 w-5" />
                       </div>
@@ -129,6 +131,7 @@ export function Navbar() {
                         <Link
                           href={link.href}
                           className="text-lg py-2 border-b border-border hover:text-cyan-400 transition-colors"
+                          onClick={() => setOpen(false)}
                         >
                           {link.label}
                         </Link>

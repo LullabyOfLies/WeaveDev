@@ -84,16 +84,7 @@ export function TechStackMarquee() {
 
   return (
     <div ref={ref} className="w-full overflow-hidden bg-muted/30">
-      <motion.div
-        variants={{
-          hidden: { opacity: 0 },
-          visible: { opacity: 1 },
-        }}
-        initial="hidden"
-        animate={controls}
-        transition={{ duration: 0.5 }}
-        className="text-center mb-6"
-      >
+      <div className="text-center mb-6">
         <h2 className="text-3xl font-bold mb-2">
           Our{" "}
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-cyan-500">Tech Stack</span>
@@ -101,7 +92,7 @@ export function TechStackMarquee() {
         <p className="text-muted-foreground max-w-2xl mx-auto">
           We leverage cutting-edge technologies to deliver exceptional software solutions
         </p>
-      </motion.div>
+      </div>
 
       <div className="relative">
         {/* Gradient fade effect on edges */}

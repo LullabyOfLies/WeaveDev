@@ -25,31 +25,37 @@ export default function Home() {
       icon: <Code className="h-10 w-10" aria-hidden="true" />,
       title: "Custom Software Development",
       description: "Tailored solutions designed to address your specific business challenges and requirements.",
+      link: "/services#custom-software",
     },
     {
       icon: <Globe className="h-10 w-10" aria-hidden="true" />,
       title: "Web Applications",
       description: "Responsive, scalable web applications built with modern technologies for optimal performance.",
+      link: "/services#web-applications",
     },
     {
       icon: <BarChart className="h-10 w-10" aria-hidden="true" />,
       title: "Branding Research",
       description: "In-depth research and analysis to help you build a strong, memorable brand that resonates with your audience.",
+      link: "/services#branding-research",
     },
     {
       icon: <Zap className="h-10 w-10" aria-hidden="true" />,
       title: "Low/No Code Applications",
       description: "Rapidly build and deploy business solutions with low-code and no-code platforms, empowering your team to innovate without deep technical expertise.",
+      link: "/services#low-no-code-apps",
     },
     {
       icon: <Layers className="h-10 w-10" aria-hidden="true" />,
       title: "UI/UX Design",
       description: "Intuitive, engaging user interfaces that enhance user satisfaction and retention.",
+      link: "/services#ui-ux-design",
     },
     {
       icon: <Sparkles className="h-10 w-10" aria-hidden="true" />,
       title: "AI Integration",
       description: "Empower your business with AI. We help you identify, integrate, and optimize the best AI tools for your unique needs.",
+      link: "/services#ai-integration",
     },
   ]
 
@@ -95,25 +101,26 @@ export default function Home() {
 
           <CardGrid columns={{ mobile: 3, tablet: 3, desktop: 3 }} gap="gap-6" scrollable={true} className="px-2.5">
             {services.map((service, index) => (
-              <Card
-                key={index}
-                className="bg-card/50 border-border hover:border-purple-500/50 transition-colors overflow-hidden group h-full card-hover-effect min-h-[268px] md:min-h-[332px]"
-              >
-                <CardContent className="p-4 md:p-6 card-content h-full">
-                  <div className="mb-4 p-2 md:p-3 rounded-lg w-fit group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-cyan-500 transition-colors duration-300">
-                    <span className="transition-colors duration-300 group-hover:text-white text-purple-500 text-cyan-500">{service.icon}</span>
-                  </div>
-                  <h3 className="text-lg md:text-xl font-bold mb-2">{service.title}</h3>
-                  <p className="text-muted-foreground text-sm md:text-base flex-grow">{service.description}</p>
-                  <div className="mt-4 flex items-center text-purple-400 group-hover:text-cyan-400 transition-colors">
-                    <span className="text-sm font-medium">Learn more</span>
-                    <ArrowRight
-                      className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform"
-                      aria-hidden="true"
-                    />
-                  </div>
-                </CardContent>
-              </Card>
+              <Link key={index} href={service.link}>
+                <Card
+                  className="bg-card/50 border-border hover:border-purple-500/50 transition-colors overflow-hidden group h-full card-hover-effect min-h-[360px] md:min-h-[332px] max-w-[400px] mx-[10px] w-full"
+                >
+                  <CardContent className="p-4 md:p-6 card-content h-full">
+                    <div className="mb-4 p-2 md:p-3 rounded-lg w-fit group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-cyan-500 transition-colors duration-300">
+                      <span className="transition-colors duration-300 group-hover:text-white text-purple-500 text-cyan-500">{service.icon}</span>
+                    </div>
+                    <h3 className="text-lg md:text-xl font-bold mb-2 break-words whitespace-normal">{service.title}</h3>
+                    <p className="text-muted-foreground text-sm md:text-base flex-grow break-words whitespace-normal">{service.description}</p>
+                    <div className="mt-4 flex items-center text-purple-400 group-hover:text-cyan-400 transition-colors">
+                      <span className="text-sm font-medium">Learn more</span>
+                      <ArrowRight
+                        className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform"
+                        aria-hidden="true"
+                      />
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </CardGrid>
 
@@ -148,7 +155,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
             <SlideInLeft>
               <Link href="/projects/dms" className="block h-full">
-                <div className="relative rounded-xl overflow-hidden border border-border group h-full hover:border-purple-500/50 transition-colors card-hover-effect">
+                <div className="relative rounded-xl overflow-hidden border border-border group h-full hover:border-purple-500/50 transition-colors card-hover-effect min-h-[268px] md:min-h-[332px] w-[85vw] max-w-[350px] sm:w-[45%]">
                   <div className="aspect-[4/3]">
                     <Image
                       src="/projects/DMS-Mockup.png"
@@ -179,7 +186,7 @@ export default function Home() {
 
             <SlideInRight>
               <Link href="/projects/ordraft" className="block h-full">
-                <div className="relative rounded-xl overflow-hidden border border-border group h-full hover:border-purple-500/50 transition-colors card-hover-effect">
+                <div className="relative rounded-xl overflow-hidden border border-border group h-full hover:border-purple-500/50 transition-colors card-hover-effect min-h-[268px] md:min-h-[332px] w-[85vw] max-w-[350px] sm:w-[45%]">
                   <div className="aspect-[4/3]">
                     <Image
                       src="/projects/ordraft-mockup.png"

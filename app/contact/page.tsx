@@ -224,10 +224,10 @@ export default function ContactPage() {
                     </div>
                   </div>
                   <a
-                    href="mailto:hello@weavedev.co"
-                    className="text-lg font-medium text-foreground hover:text-purple-500 transition-colors"
+                    href="mailto:weavedevsolutions@gmail.com"
+                    className="lg:text-lg sm:text-xs font-small text-foreground hover:text-purple-500 transition-colors" 
                   >
-                    hello@weavedev.co
+                    weavedevsolutions@gmail.com
                   </a>
                 </div>
 
@@ -244,7 +244,7 @@ export default function ContactPage() {
 
                   <Accordion type="single" collapsible className="mt-4 space-y-2">
                     <AccordionItem value="item-1">
-                      <AccordionTrigger>What is your typical project timeline?</AccordionTrigger>
+                      <AccordionTrigger className="text-left">What is your typical project timeline?</AccordionTrigger>
                       <AccordionContent>
                         Project timelines vary based on scope and complexity. A simple web application might take 4-8
                         weeks, while more complex enterprise solutions can take 3-6 months. We'll provide a detailed
@@ -252,7 +252,7 @@ export default function ContactPage() {
                       </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-2">
-                      <AccordionTrigger>How do you handle project pricing?</AccordionTrigger>
+                      <AccordionTrigger  className="text-left">How do you handle project pricing?</AccordionTrigger>
                       <AccordionContent>
                         We offer flexible pricing models including fixed-price quotes for well-defined projects and time
                         and materials billing for more dynamic engagements. We'll recommend the best approach based on
@@ -260,7 +260,7 @@ export default function ContactPage() {
                       </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-3">
-                      <AccordionTrigger>Do you provide ongoing support?</AccordionTrigger>
+                      <AccordionTrigger  className="text-left">Do you provide ongoing support?</AccordionTrigger>
                       <AccordionContent>
                         Yes, we offer various support and maintenance packages to ensure your software continues to
                         perform optimally after launch. Our team can provide regular updates, bug fixes, and feature
@@ -268,7 +268,7 @@ export default function ContactPage() {
                       </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-4">
-                      <AccordionTrigger>What technologies do you specialize in?</AccordionTrigger>
+                      <AccordionTrigger  className="text-left">What technologies do you specialize in?</AccordionTrigger>
                       <AccordionContent>
                         Our team is proficient in a wide range of technologies including React, Angular, Vue, Node.js,
                         Python, .NET, PostgreSQL, MongoDB, and more. We select the best technology stack based on your
@@ -276,7 +276,7 @@ export default function ContactPage() {
                       </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-5">
-                      <AccordionTrigger>How do you ensure project quality?</AccordionTrigger>
+                      <AccordionTrigger  className="text-left">How do you ensure project quality?</AccordionTrigger>
                       <AccordionContent>
                         We follow industry best practices including agile methodologies, code reviews, automated
                         testing, and continuous integration. Our quality assurance team thoroughly tests all

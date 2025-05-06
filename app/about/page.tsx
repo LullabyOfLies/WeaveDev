@@ -13,6 +13,7 @@ import {
 } from "@/components/animated-elements"
 import { CardGrid } from "@/components/card-grid"
 import Link from "next/link"
+import { Card, CardContent } from "@/components/ui/card"
 
 export default function AboutPage() {
   // Core values data
@@ -127,19 +128,13 @@ export default function AboutPage() {
                 Our <AnimatedGradientText>Story</AnimatedGradientText>
               </h2>
               <p className="text-gray-300 mb-6">
-                Founded in 2013, WeaveDev Co. began with a simple mission: to help businesses leverage technology to
-                solve their most complex challenges. What started as a small team of three passionate developers has
-                grown into a full-service software development company with a global client base.
+                Founded in 2024, WeaveDev Co. is a passionate startup dedicated to helping businesses harness technology for real-world impact. Our journey began with a small, driven team eager to deliver innovative, high-quality software solutions.
               </p>
               <p className="text-gray-300 mb-6">
-                Over the years, we've refined our approach to software development, focusing on creating bespoke
-                solutions that are not only technically excellent but also aligned with our clients' business
-                objectives. We believe that the best software is born from a deep understanding of the problems it aims
-                to solve.
+                As a new player in the industry, we focus on building strong partnerships and delivering tailored solutions that empower our clients to grow and succeed in a digital world.
               </p>
               <p className="text-gray-300 mb-8">
-                Today, WeaveDev Co. is recognized as a leader in custom software development, known for our technical
-                expertise, collaborative approach, and unwavering commitment to client success.
+                We are committed to continuous learning, creative problem-solving, and making a difference as a modern tech startup.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -153,7 +148,7 @@ export default function AboutPage() {
                 </div>
                 <div className="flex items-center">
                   <CheckCircle className="h-5 w-5 text-purple-500 mr-2" aria-hidden="true" />
-                  <span>Local Presence</span>
+                  <span>Global Presence</span>
                 </div>
               </div>
             </SlideInRight>
@@ -181,12 +176,10 @@ export default function AboutPage() {
               </div>
               <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
               <p className="text-gray-300 mb-4">
-                To empower businesses through innovative software solutions that solve complex challenges, drive growth,
-                and create lasting value.
+                Empower businesses with innovative software that solves real problems and drives growth.
               </p>
               <p className="text-gray-300">
-                We're committed to understanding our clients' unique needs and delivering tailored solutions that exceed
-                expectations, foster digital transformation, and enable sustainable success.
+                We listen, learn, and deliver solutions that make a difference.
               </p>
             </FadeInView>
 
@@ -196,12 +189,10 @@ export default function AboutPage() {
               </div>
               <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
               <p className="text-gray-300 mb-4">
-                To be the premier partner for businesses seeking transformative software solutions, recognized globally
-                for our technical excellence, innovative approach, and exceptional client outcomes.
+                Be the go-to partner for startups and businesses seeking creative, impactful technology.
               </p>
               <p className="text-gray-300">
-                We envision a future where every business, regardless of size or industry, can harness the full
-                potential of technology to achieve their goals and make a positive impact.
+                We see a future where every business can thrive with the right digital tools.
               </p>
             </FadeInView>
           </div>
@@ -221,35 +212,20 @@ export default function AboutPage() {
             </p>
           </FadeInView>
 
-          {/* Desktop grid - hidden on mobile and tablet */}
-          <div className="hidden lg:grid grid-cols-3 gap-8">
+          <CardGrid columns={{ mobile: 3, tablet: 3, desktop: 3 }} gap="gap-6" scrollable={true} className="px-2.5">
             {coreValues.map((value, index) => (
-              <div
+              <Card
                 key={index}
-                className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 h-full hover:border-purple-500/50 transition-colors"
+                className="bg-card/50 border-border hover:border-purple-500/50 transition-colors overflow-hidden group h-full card-hover-effect min-h-[360px] md:min-h-[332px] max-w-[400px] mx-[10px] w-full"
               >
-                <div className="mb-4">{value.icon}</div>
-                <h3 className="text-xl font-bold mb-2">{value.title}</h3>
-                <p className="text-gray-400">{value.description}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Mobile and tablet scrollable cards */}
-          <div className="lg:hidden">
-            <CardGrid columns={{ mobile: 3, tablet: 3, desktop: 3 }} gap="gap-6" scrollable={true} className="px-2.5">
-              {coreValues.map((value, index) => (
-                <div
-                  key={index}
-                  className="bg-gray-800/50 border-gray-700 rounded-xl p-6 h-full card-hover-effect md:min-h-[332px] w-[100vw] hover:border-purple-500/50 transition-colors"
-                >
+                <CardContent className="p-4 md:p-6 card-content h-full flex flex-col items-center justify-center">
                   <div className="mb-4">{value.icon}</div>
-                  <h3 className="text-xl font-bold mb-2">{value.title}</h3>
-                  <p className="text-gray-400">{value.description}</p>
-                </div>
-              ))}
-            </CardGrid>
-          </div>
+                  <h3 className="text-lg md:text-xl font-bold mb-2 text-center">{value.title}</h3>
+                  <p className="text-gray-400 text-center">{value.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </CardGrid>
         </div>
       </section>
 
@@ -288,28 +264,26 @@ export default function AboutPage() {
             ))}
           </div>
 
-          {/* Mobile and tablet scrollable cards */}
-          <div className="lg:hidden flex justify-center">
-            <CardGrid columns={{ mobile: 1, tablet: 2, desktop: 2 }} gap="gap-6" className="justify-center">
-              {teamMembers.map((member, index) => (
-                <div key={index} className="bg-gray-800/50 border-gray-700 rounded-xl overflow-hidden w-[320px] max-w-xs">
-                  <div className="aspect-square relative">
-                    <Image
-                      src={member.image || "/placeholder.svg"}
-                      alt={member.name}
-                      width={400}
-                      height={400}
-                      className="w-full h-full object-cover max-h-[318px] object-center"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="p-4 text-center">
-                    <h3 className="text-lg font-bold">{member.name}</h3>
-                    <p className="text-gray-400">{member.role}</p>
-                  </div>
+          {/* Mobile and tablet: flex wrap, no overflow-x */}
+          <div className="lg:hidden flex flex-wrap justify-center gap-6">
+            {teamMembers.map((member, index) => (
+              <div key={index} className="bg-gray-800/50 border-gray-700 rounded-xl overflow-hidden w-[320px] max-w-xs mb-6">
+                <div className="aspect-square relative">
+                  <Image
+                    src={member.image || "/placeholder.svg"}
+                    alt={member.name}
+                    width={400}
+                    height={400}
+                    className="w-full h-full object-cover max-h-[318px] object-center"
+                    loading="lazy"
+                  />
                 </div>
-              ))}
-            </CardGrid>
+                <div className="p-4 text-center">
+                  <h3 className="text-lg font-bold">{member.name}</h3>
+                  <p className="text-gray-400">{member.role}</p>
+                </div>
+              </div>
+            ))}
           </div>
 
           <div className="text-center mt-12">

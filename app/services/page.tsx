@@ -135,7 +135,24 @@ export default function ServicesPage() {
       <section id="custom-software" className="py-20 bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 items-center">
-            <SlideInLeft>
+            <SlideInLeft className="order-1 lg:order-1 w-full">
+              <div className="relative">
+                <div className="aspect-[4/3] rounded-xl overflow-hidden border border-gray-700 bg-white flex items-center justify-center">
+                  <Image
+                    src="/projects/custom-soft.jpg"
+                    alt="Custom Software Development"
+                    width={800}
+                    height={600}
+                    className="object-contain"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="absolute -bottom-6 -left-6 bg-gradient-to-r from-purple-600 to-cyan-500 p-4 rounded-lg shadow-xl">
+                  <Code className="h-8 w-8 text-white" aria-hidden="true" />
+                </div>
+              </div>
+            </SlideInLeft>
+            <SlideInRight className="order-2 lg:order-2 w-full">
               <h2 className="text-3xl font-bold mb-6">
                 Custom Software <AnimatedGradientText>Development</AnimatedGradientText>
               </h2>
@@ -192,24 +209,6 @@ export default function ServicesPage() {
                   </Button>
                 </Link>
               </AnimatedButton>
-            </SlideInLeft>
-
-            <SlideInRight>
-              <div className="relative">
-                <div className="aspect-[4/3] rounded-xl overflow-hidden border border-gray-700 bg-white flex items-center justify-center">
-                  <Image
-                    src="/projects/custom-soft.jpg"
-                    alt="Custom Software Development"
-                    width={800}
-                    height={600}
-                    className="object-contain"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="absolute -bottom-6 -left-6 bg-gradient-to-r from-purple-600 to-cyan-500 p-4 rounded-lg shadow-xl">
-                  <Code className="h-8 w-8 text-white" aria-hidden="true" />
-                </div>
-              </div>
             </SlideInRight>
           </div>
         </div>
@@ -219,7 +218,7 @@ export default function ServicesPage() {
       <section id="web-applications" className="py-20">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 items-center">
-            <SlideInLeft>
+            <SlideInLeft className="order-1 lg:order-2 w-full">
               <div className="relative">
                 <div className="aspect-[4/3] rounded-xl overflow-hidden border border-gray-700 bg-white flex items-center justify-center">
                   <Image
@@ -236,8 +235,8 @@ export default function ServicesPage() {
                 </div>
               </div>
             </SlideInLeft>
-            <SlideInRight>
-            <h2 className="text-3xl font-bold mb-6">
+            <SlideInRight className="order-2 lg:order-1 w-full">
+              <h2 className="text-3xl font-bold mb-6">
                 Web <AnimatedGradientText>Applications</AnimatedGradientText>
               </h2>
               <p className="text-gray-300 mb-6">
@@ -282,18 +281,34 @@ export default function ServicesPage() {
                   </Button>
                 </Link>
               </AnimatedButton>
-        
             </SlideInRight>
           </div>
         </div>
       </section>
 
       {/* Branding Research */}
-      <section id="branding-research" className="py-20">
+      <section id="branding-research" className="py-20 bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 items-center">
-            <SlideInLeft>
-           <h2 className="text-3xl font-bold mb-6">
+            <SlideInLeft className="order-1 lg:order-1 w-full">
+              <div className="relative">
+                <div className="aspect-[4/3] rounded-xl overflow-hidden border border-gray-700 bg-white flex items-center justify-center">
+                  <Image
+                    src="/projects/branding.png"
+                    alt="Branding Research"
+                    width={800}
+                    height={600}
+                    className="object-contain"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="absolute -bottom-6 -left-6 bg-gradient-to-r from-purple-600 to-cyan-500 p-4 rounded-lg shadow-xl">
+                  <Sparkles className="h-8 w-8 text-white" aria-hidden="true" />
+                </div>
+              </div>
+            </SlideInLeft>
+            <SlideInRight className="order-2 lg:order-2 w-full">
+              <h2 className="text-3xl font-bold mb-6">
                 Branding <AnimatedGradientText>Research</AnimatedGradientText>
               </h2>
               <p className="text-gray-300 mb-6">
@@ -344,34 +359,17 @@ export default function ServicesPage() {
                   </Button>
                 </Link>
               </AnimatedButton>
-            </SlideInLeft>
-            <SlideInRight>
-             <div className="relative">
-                <div className="aspect-[4/3] rounded-xl overflow-hidden border border-gray-700 bg-white flex items-center justify-center">
-                  <Image
-                    src="/projects/branding.png"
-                    alt="Branding Research"
-                    width={800}
-                    height={600}
-                    className="object-contain"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="absolute -bottom-6 -left-6 bg-gradient-to-r from-purple-600 to-cyan-500 p-4 rounded-lg shadow-xl">
-                  <Sparkles className="h-8 w-8 text-white" aria-hidden="true" />
-                </div>
-              </div>   
             </SlideInRight>
           </div>
         </div>
       </section>
 
       {/* Low/No code Applications */}
-      <section id="low-no-code-apps" className="py-20 bg-gray-900">
+      <section id="low-no-code-apps" className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 items-center">
-            <SlideInLeft>
-             <div className="relative">
+            <SlideInLeft className="order-1 lg:order-2 w-full">
+              <div className="relative">
                 <div className="aspect-[4/3] rounded-xl overflow-hidden border border-gray-700 bg-white flex items-center justify-center">
                   <Image
                     src="/projects/no-code.jpeg"
@@ -387,8 +385,8 @@ export default function ServicesPage() {
                 </div>
               </div>
             </SlideInLeft>
-            <SlideInRight>
- <h2 className="text-3xl font-bold mb-6">
+            <SlideInRight className="order-2 lg:order-1 w-full">
+              <h2 className="text-3xl font-bold mb-6">
                 Low/No code <AnimatedGradientText>Applications</AnimatedGradientText>
               </h2>
               <p className="text-gray-300 mb-6">
@@ -439,19 +437,17 @@ export default function ServicesPage() {
                   </Button>
                 </Link>
               </AnimatedButton>
-            {/*  */}
-              
             </SlideInRight>
           </div>
         </div>
       </section>
 
       {/* UI/UX Design */}
-      <section id="ui-ux-design" className="py-20 bg-muted/30">
+      <section id="ui-ux-design" className="py-20 bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 items-center">
-            <SlideInRight className="order-2 lg:order-2">
-               <div className="relative">
+            <SlideInRight className="order-2 lg:order-1 w-full">
+              <div className="relative">
                 <div className="aspect-[4/3] rounded-xl overflow-hidden border border-gray-700 bg-white flex items-center justify-center">
                   <Image
                     src="/projects/ui-ux.jpg"
@@ -467,8 +463,8 @@ export default function ServicesPage() {
                 </div>
               </div>
             </SlideInRight>
-            <SlideInLeft className="order-1 lg:order-1">
-            <h2 className="text-3xl font-bold mb-6">
+            <SlideInLeft className="order-1 lg:order-2 w-full">
+              <h2 className="text-3xl font-bold mb-6">
                 UI/UX <AnimatedGradientText>Design</AnimatedGradientText>
               </h2>
               <p className="text-gray-300 mb-6">
@@ -513,8 +509,6 @@ export default function ServicesPage() {
                   </Button>
                 </Link>
               </AnimatedButton>
-            {/*  */}
-           
             </SlideInLeft>
           </div>
         </div>
@@ -524,8 +518,8 @@ export default function ServicesPage() {
       <section id="ai-integration" className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 items-center">
-            <SlideInRight className="order-2 lg:order-2">
-            <h2 className="text-3xl font-bold mb-6">
+            <SlideInRight className="order-2 lg:order-1 w-full">
+              <h2 className="text-3xl font-bold mb-6">
                 <AnimatedGradientText>AI Integration</AnimatedGradientText>
               </h2>
               <p className="text-gray-300 mb-6">
@@ -571,7 +565,7 @@ export default function ServicesPage() {
                 </Link>
               </AnimatedButton>
             </SlideInRight>
-            <SlideInLeft className="order-1 lg:order-1">
+            <SlideInLeft className="order-1 lg:order-2 w-full">
               <div className="relative">
                 <div className="aspect-[4/3] rounded-xl overflow-hidden border border-gray-700 bg-white flex items-center justify-center">
                   <Image
@@ -587,7 +581,6 @@ export default function ServicesPage() {
                   <Sparkles className="h-8 w-8 text-white" aria-hidden="true" />
                 </div>
               </div>
-            {/*  */}
             </SlideInLeft>
           </div>
         </div>
