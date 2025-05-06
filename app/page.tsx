@@ -154,7 +154,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
             <SlideInLeft>
-              <Link href="/projects/dms" className="block h-full">
+              <Link href="/projects#dms" className="block h-full">
                 <div className="relative rounded-xl overflow-hidden border border-border group h-full hover:border-purple-500/50 transition-colors card-hover-effect min-h-[268px] md:min-h-[332px]  sm:max-w-[350px] lg:max-w-full w-[100%]">
                   <div className="aspect-[4/3]">
                     <Image
@@ -185,7 +185,7 @@ export default function Home() {
             </SlideInLeft>
 
             <SlideInRight>
-              <Link href="/projects/ordraft" className="block h-full">
+              <Link href="/projects#ordraft" className="block h-full">
                 <div className="relative rounded-xl overflow-hidden border border-border group h-full hover:border-purple-500/50 transition-colors card-hover-effect min-h-[268px] md:min-h-[332px]  sm:max-w-[350px] lg:max-w-full w-[100%]">
                   <div className="aspect-[4/3]">
                     <Image

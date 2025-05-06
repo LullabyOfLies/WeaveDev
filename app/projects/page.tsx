@@ -232,7 +232,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* DMS Project Section */}
-      <section className="py-16 md:py-24 border-b border-border">
+      <section className="py-16 md:py-24 border-b border-border" id="dms">
         <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-12 items-center">
           <div className="flex-1">
             <Image
@@ -279,7 +279,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* OrDraft Project Section */}
-      <section className="py-16 md:py-24 border-b border-border">
+      <section className="py-16 md:py-24 border-b border-border" id="ordraft">
         <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-12 items-center">
           <div className="flex-1 order-2 lg:order-1">
             <span className="text-xs text-purple-400 font-medium mb-2 block">GOVERNMENT / LEGAL TECH</span>
