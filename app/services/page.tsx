@@ -134,7 +134,7 @@ export default function ServicesPage() {
       {/* Custom Software Development */}
       <section id="custom-software" className="py-20 bg-gray-900">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 items-center">
             <SlideInLeft>
               <h2 className="text-3xl font-bold mb-6">
                 Custom Software <AnimatedGradientText>Development</AnimatedGradientText>
@@ -186,9 +186,11 @@ export default function ServicesPage() {
               </div>
 
               <AnimatedButton>
-                <Button className="bg-gradient-to-r from-purple-600 to-cyan-500 border-0 text-white hover:opacity-90">
-                  Request a Consultation
-                </Button>
+                <Link href="/contact">
+                  <Button className="bg-gradient-to-r from-purple-600 to-cyan-500 border-0 text-white hover:opacity-90">
+                    Request a Consultation
+                  </Button>
+                </Link>
               </AnimatedButton>
             </SlideInLeft>
 
@@ -216,7 +218,7 @@ export default function ServicesPage() {
       {/* Web Applications */}
       <section id="web-applications" className="py-20">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 items-center">
             <SlideInLeft>
               <div className="relative">
                 <div className="aspect-[4/3] rounded-xl overflow-hidden border border-gray-700 bg-white flex items-center justify-center">
@@ -274,9 +276,11 @@ export default function ServicesPage() {
                 </div>
               </div>
               <AnimatedButton>
-                <Button className="bg-gradient-to-r from-purple-600 to-cyan-500 border-0 text-white hover:opacity-90">
-                  Start Your Web Project
-                </Button>
+                <Link href="/contact">
+                  <Button className="bg-gradient-to-r from-purple-600 to-cyan-500 border-0 text-white hover:opacity-90">
+                    Start Your Web Project
+                  </Button>
+                </Link>
               </AnimatedButton>
         
             </SlideInRight>
@@ -287,7 +291,7 @@ export default function ServicesPage() {
       {/* Branding Research */}
       <section id="branding-research" className="py-20">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 items-center">
             <SlideInLeft>
            <h2 className="text-3xl font-bold mb-6">
                 Branding <AnimatedGradientText>Research</AnimatedGradientText>
@@ -334,9 +338,11 @@ export default function ServicesPage() {
                 </div>
               </div>
               <AnimatedButton>
-                <Button className="bg-gradient-to-r from-purple-600 to-cyan-500 border-0 text-white hover:opacity-90">
-                  Start Your Brand Research
-                </Button>
+                <Link href="/contact">
+                  <Button className="bg-gradient-to-r from-purple-600 to-cyan-500 border-0 text-white hover:opacity-90">
+                    Start Your Brand Research
+                  </Button>
+                </Link>
               </AnimatedButton>
             </SlideInLeft>
             <SlideInRight>
@@ -363,7 +369,7 @@ export default function ServicesPage() {
       {/* Low/No code Applications */}
       <section id="low-no-code-apps" className="py-20 bg-gray-900">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 items-center">
             <SlideInLeft>
              <div className="relative">
                 <div className="aspect-[4/3] rounded-xl overflow-hidden border border-gray-700 bg-white flex items-center justify-center">
@@ -427,9 +433,11 @@ export default function ServicesPage() {
                 </div>
               </div>
               <AnimatedButton>
-                <Button className="bg-gradient-to-r from-purple-600 to-cyan-500 border-0 text-white hover:opacity-90">
-                  Explore Low/No code Solutions
-                </Button>
+                <Link href="/contact">
+                  <Button className="bg-gradient-to-r from-purple-600 to-cyan-500 border-0 text-white hover:opacity-90">
+                    Explore Low/No code Solutions
+                  </Button>
+                </Link>
               </AnimatedButton>
             {/*  */}
               
@@ -441,7 +449,7 @@ export default function ServicesPage() {
       {/* UI/UX Design */}
       <section id="ui-ux-design" className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 items-center">
             <SlideInRight className="order-2 lg:order-2">
                <div className="relative">
                 <div className="aspect-[4/3] rounded-xl overflow-hidden border border-gray-700 bg-white flex items-center justify-center">
@@ -499,9 +507,11 @@ export default function ServicesPage() {
                 </div>
               </div>
               <AnimatedButton>
-                <Button className="bg-gradient-to-r from-purple-600 to-cyan-500 border-0 text-white hover:opacity-90">
-                  Start Your Design Project
-                </Button>
+                <Link href="/contact">
+                  <Button className="bg-gradient-to-r from-purple-600 to-cyan-500 border-0 text-white hover:opacity-90">
+                    Start Your Design Project
+                  </Button>
+                </Link>
               </AnimatedButton>
             {/*  */}
            
@@ -513,7 +523,7 @@ export default function ServicesPage() {
       {/* AI Integration */}
       <section id="ai-integration" className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 items-center">
             <SlideInRight className="order-2 lg:order-2">
             <h2 className="text-3xl font-bold mb-6">
                 <AnimatedGradientText>AI Integration</AnimatedGradientText>
@@ -554,9 +564,11 @@ export default function ServicesPage() {
                 </div>
               </div>
               <AnimatedButton>
-                <Button className="bg-gradient-to-r from-purple-600 to-cyan-500 border-0 text-white hover:opacity-90">
-                  Start Your AI Journey
-                </Button>
+                <Link href="/contact">
+                  <Button className="bg-gradient-to-r from-purple-600 to-cyan-500 border-0 text-white hover:opacity-90">
+                    Start Your AI Journey
+                  </Button>
+                </Link>
               </AnimatedButton>
             </SlideInRight>
             <SlideInLeft className="order-1 lg:order-1">

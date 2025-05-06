@@ -1,0 +1,16 @@
+{
+  "name": "WeaveDev Co. | Custom Software Solutions",
+  "short_name": "WeaveDev Co.",
+  "description": "Crafting bespoke software solutions tailored to address the unique challenges of your business.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#09090b",
+  "theme_color": "#09090b",
+  "icons": [
+    {
+      "src": "/projects/weave-icon-ico.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ]
+} 

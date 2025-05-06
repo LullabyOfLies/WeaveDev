@@ -12,6 +12,7 @@ import {
   AnimatedButton,
 } from "@/components/animated-elements"
 import { CardGrid } from "@/components/card-grid"
+import Link from "next/link"
 
 export default function AboutPage() {
   // Core values data
@@ -317,12 +318,14 @@ export default function AboutPage() {
               quality assurance specialists who work together to deliver exceptional results.
             </p>
             <AnimatedButton>
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-purple-600 to-cyan-500 border-0 text-white hover:opacity-90"
-              >
-                Join Our Team
-              </Button>
+              <Link href="/contact">
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-purple-600 to-cyan-500 border-0 text-white hover:opacity-90"
+                >
+                  Join Our Team
+                </Button>
+              </Link>
             </AnimatedButton>
           </div>
         </div>
@@ -387,12 +390,14 @@ export default function AboutPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <AnimatedButton>
-                <Button
-                  size="lg"
-                  className="bg-gradient-to-r from-purple-600 to-cyan-500 border-0 text-white hover:opacity-90"
-                >
-                  Get in Touch
-                </Button>
+                <Link href="/contact">
+                  <Button
+                    size="lg"
+                    className="bg-gradient-to-r from-purple-600 to-cyan-500 border-0 text-white hover:opacity-90"
+                  >
+                    Get in Touch
+                  </Button>
+                </Link>
               </AnimatedButton>
               <AnimatedButton>
                 <Button size="lg" variant="outline" className="border-gray-700 text-white hover:bg-gray-800">
