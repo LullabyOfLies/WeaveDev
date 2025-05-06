@@ -155,7 +155,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
             <SlideInLeft>
               <Link href="/projects/dms" className="block h-full">
-                <div className="relative rounded-xl overflow-hidden border border-border group h-full hover:border-purple-500/50 transition-colors card-hover-effect min-h-[268px] md:min-h-[332px] w-[85vw] max-w-[350px] sm:w-[45%]">
+                <div className="relative rounded-xl overflow-hidden border border-border group h-full hover:border-purple-500/50 transition-colors card-hover-effect min-h-[268px] md:min-h-[332px]  sm:max-w-[350px] lg:max-w-full w-[100%]">
                   <div className="aspect-[4/3]">
                     <Image
                       src="/projects/DMS-Mockup.png"
@@ -166,11 +166,11 @@ export default function Home() {
                       loading="lazy"
                     />
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex flex-col justify-end p-4 md:p-6">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex flex-col justify-end p-4 md:p-6 sm:h-[100%]">
                     <span className="text-xs text-cyan-400 font-medium mb-2">ENTERPRISE</span>
-                    <h3 className="text-xl md:text-2xl font-bold mb-2 text-white">Document Management System (DMS)</h3>
+                    <h3 className="text-xl md:text-2xl font-bold mb-2 text-white">Document Management System</h3>
                     <p className="text-gray-300 mb-4 text-sm md:text-base">
-                      A robust document management platform enabling secure storage, easy retrieval, and seamless collaboration for enterprise teams.
+                      Secure, collaborative platform for enterprise document management and easy retrieval.
                     </p>
                     <div className="inline-flex items-center text-white font-medium">
                       View Project
@@ -186,7 +186,7 @@ export default function Home() {
 
             <SlideInRight>
               <Link href="/projects/ordraft" className="block h-full">
-                <div className="relative rounded-xl overflow-hidden border border-border group h-full hover:border-purple-500/50 transition-colors card-hover-effect min-h-[268px] md:min-h-[332px] w-[85vw] max-w-[350px] sm:w-[45%]">
+                <div className="relative rounded-xl overflow-hidden border border-border group h-full hover:border-purple-500/50 transition-colors card-hover-effect min-h-[268px] md:min-h-[332px]  sm:max-w-[350px] lg:max-w-full w-[100%]">
                   <div className="aspect-[4/3]">
                     <Image
                       src="/projects/ordraft-mockup.png"
@@ -197,11 +197,11 @@ export default function Home() {
                       loading="lazy"
                     />
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex flex-col justify-end p-4 md:p-6">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex flex-col justify-end p-4 md:p-6 sm:h-[100%]">
                     <span className="text-xs text-purple-400 font-medium mb-2">GOVERNMENT / LEGAL TECH</span>
-                    <h3 className="text-xl md:text-2xl font-bold mb-2 text-white">OrDraft Legal Document Processing App</h3>
+                    <h3 className="text-xl md:text-2xl font-bold mb-2 text-white">OrDraft Legal App</h3>
                     <p className="text-gray-300 mb-4 text-sm md:text-base">
-                      OrDraft is a legal document processing app for the Legal Unit of the Department of Environment and Natural Resources, enabling fast drafting, review, and management of legal documents for government compliance and efficiency.
+                      Fast, compliant legal document processing for government and legal teams.
                     </p>
                     <div className="inline-flex items-center text-white font-medium">
                       View Project

@@ -40,13 +40,17 @@ export const metadata: Metadata = {
     images: ['/projects/weave-icon-ico.ico'],
     creator: '@weavedevco',
   },
-  themeColor: '#09090b',
-  viewport: 'width=device-width, initial-scale=1',
   icons: {
     icon: '/projects/weave-icon-ico.ico',
     shortcut: '/projects/weave-icon-ico.ico',
     apple: '/projects/weave-icon-ico.ico',
   },
+}
+
+export const viewport = {
+  themeColor: '#09090b',
+  width: 'device-width',
+  initialScale: 1,
 }
 
 export default function RootLayout({
